@@ -6,23 +6,48 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Praestus Capital - Investment Solutions</title>
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<style type="text/tailwindcss">
 		@theme {
-				--color-primary: #0d223a;
-				--color-accent: #bfa76a;
-				--color-bg: #f8f6f2;
-				--color-services-bg: #f3f1ef;
-			}
-		</style>
+			--color-primary: #0d223a;
+			--color-accent: #bfa76a;
+			--color-bg: #f8f6f2;
+			--color-services-bg: #f3f1ef;
+		}
+
+		.font-roboto {
+			font-family: "Roboto", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 400;
+			font-style: normal;
+			font-variation-settings: "wdth" 100;
+		}
+
+		.font-cinzel {
+			font-family: "Cinzel", serif;
+			font-optical-sizing: auto;
+			font-weight: 400;
+			font-style: normal;
+		}
+		.font-cinzel-bold {
+			font-family: "Cinzel", serif;
+			font-optical-sizing: auto;
+			font-weight: 600;
+			font-style: normal;
+		}
+	</style>
 </head>
 
-<body class="bg-white font-serif container mx-auto px-4">
+<body class="bg-white font-roboto container mx-auto px-4">
 	<nav class="bg-[var(--color-primary)]">
 		<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 			<div class="relative flex h-16 items-center justify-between">
 				<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 					<!-- Mobile menu button-->
-					<button type="button"
+					<button id="mobile-menu-button"
 						class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset"
 						aria-controls="mobile-menu" aria-expanded="false">
 						<span class="absolute -inset-0.5"></span>
@@ -40,9 +65,9 @@
 				</div>
 				<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 					<div class="flex shrink-0 items-center">
-						<img class="h-18 w-20" src="./img/logo-gold-shield.png" alt="Praestus Capital" />
-						<span class="text-2xl font-bold tracking-wide text-[var(--color-accent)]">PRAESTUS 
-							<span class="block text-xs font-normal tracking-widest text-white">CAPITAL</span>
+						<img class="h-18 w-20 hidden sm:block" src="./img/logo-gold-shield.png" alt="Praestus Capital" />
+						<span class="text-2xl font-cinzel-bold tracking-wide text-[var(--color-accent)]">PRAESTUS 
+							<span class="block text-xs font-cinzel tracking-widest text-white">CAPITAL</span>
 						</span>
 					</div>
 				</div>
@@ -65,7 +90,7 @@
 		</div>
 
 		<!-- Mobile menu, show/hide based on menu state. -->
-		<div class="sm:hidden" id="mobile-menu">
+		<div class="sm:hidden hidden" id="mobile-menu">
 			<div class="space-y-1 px-2 pt-2 pb-3">
 				<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 				<a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
@@ -145,21 +170,29 @@
 	</section>
 
 	<!-- Contact Us -->
-	<section id="contact" class="bg-[var(--color-primary)] text-white px-8 py-16">
-		<div class="max-w-5xl mx-auto flex">
-			<div class="w-128 flex-none">
-				<h2 class="text-2xl font-bold mb-4">CONTATO</h2>
-				<p class="text-lg">Entre em contato conosco hoje para discutir suas necessidades de investimento e
-					objetivos financeiros.</p>
+	<section id="contact" class="bg-[var(--color-primary)] text-white px-4 py-12">
+		<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center">
+			<div class="w-full md:w-1/2 mb-8 md:mb-0">
+			<h2 class="text-2xl font-bold mb-4">CONTATO</h2>
+			<p class="text-lg">Entre em contato conosco hoje para discutir suas necessidades de investimento e
+				objetivos financeiros.</p>
 			</div>
-			<div class="w-64 flex-auto px-48 py-8">
-				<a href="mailto:contato@praestus.com.br"
-					class="inline-block bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold px-8 py-3 m-2 rounded shadow hover:bg-yellow-600 transition">EMAIL</a>
-				<a href="https://wa.me/5512991188048"
-					class="inline-block bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold px-8 py-3 m-2 rounded shadow hover:bg-yellow-600 transition">WHATSAPP</a>
+			<div class="w-full md:w-1/2 flex flex-col md:flex-row md:justify-end gap-4">
+			<a href="mailto:contato@praestus.com.br"
+				class="inline-block bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold px-8 py-3 rounded shadow hover:bg-yellow-600 transition text-center">EMAIL</a>
+			<a href="https://wa.me/5512991188048"
+				class="inline-block bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold px-8 py-3 rounded shadow hover:bg-yellow-600 transition text-center">WHATSAPP</a>
 			</div>
 		</div>
 	</section>
+
+	<script>
+		const btn = document.getElementById('mobile-menu-button');
+		const menu = document.getElementById('mobile-menu');
+		btn.addEventListener('click', () => {
+			menu.classList.toggle('hidden');
+		});
+	</script>
 </body>
 
 </html>
